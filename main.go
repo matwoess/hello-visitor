@@ -8,9 +8,20 @@ import (
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Hello, Visitor!<br/>")
-	t := time.Now()
-	fmt.Fprintf(w, "The current time is %d:%d:%d", t.Hour(), t.Minute(), t.Second())
+	fmt.Fprintf(w, "Hello, Visitor!<br/>")
+	fmt.Fprintf(w, "The current date and time is: %s\n", getDateTimeString(time.Now()))
+}
+
+func getDateTimeString(t time.Time) string {
+	return fmt.Sprintf(
+		"%d.%d.%d %d:%d:%d",
+		t.Day(),
+		t.Month(),
+		t.Year(),
+		t.Hour(),
+		t.Minute(),
+		t.Second(),
+	)
 }
 
 func main() {
