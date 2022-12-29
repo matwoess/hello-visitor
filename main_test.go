@@ -6,9 +6,17 @@ import (
 )
 
 func TestGetDateTimeString(t *testing.T) {
-	someTime := time.Date(2022, 12, 28, 18, 19, 45, 2, time.Local)
+	year := 2022
+	month := time.Month(2)
+	day := 8
+	hour := 0
+	min := 9
+	sec := 4
+	nano := 0
+	loc := time.Local
+	someTime := time.Date(year, month, day, hour, min, sec, nano, loc)
 	res := getDateTimeString(someTime)
-	if res != "28.12.2022 18:19:45" {
-		t.Errorf("getDateTimeString(someTime) = %s; wanted 28.12.2022 18:19:45", res)
+	if res != "08.02.2022 00:09:04" {
+		t.Errorf("getDateTimeString(someTime) = %s; wanted 08.02.2022 00:09:04", res)
 	}
 }

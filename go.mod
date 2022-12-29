@@ -1,4 +1,4 @@
-module github.com/matwoess/jku-cloudnative/hello-visitor
+module github.com/matwoess/hello-visitor
 
 go 1.13
 
